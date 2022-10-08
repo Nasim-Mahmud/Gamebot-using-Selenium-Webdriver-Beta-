@@ -22,5 +22,7 @@ for n in range(len(event_times)):
 
 print(events)
 
+
+
 driver.quit()
 
