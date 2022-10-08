@@ -10,8 +10,8 @@ driver = webdriver.Chrome(service=s)
 driver.get("https://selenium-python.readthedocs.io/")
 
 # Comment: Class a-offscreen not working!
-price1 = driver.find_element(By.CLASS_NAME, "logo")
-print(price1.size)
+price1 = driver.find_element(By.XPATH, "/html/body/div[1]/div[2]/div/div[1]/h3").text
+print(price1)
 # price2 = driver.find_element(By.CLASS_NAME, "a-price-fraction").text
 # print(price2)
 #
