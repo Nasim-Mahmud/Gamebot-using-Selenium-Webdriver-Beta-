@@ -20,8 +20,15 @@ language = driver.find_element(By.ID, "langSelect-EN").click()
 driver.implicitly_wait(50)
 terms = driver.find_element(By.XPATH, '/html/body/div[1]/div/a[1]').click()
 
-for n in range(5000):
+
+for n in range(11):
     cookie = driver.find_element(By.ID, "bigCookie").click()
+
+cookie_number = driver.find_element(By.ID, 'cookies').text.split(" ")
+print(cookie_number[0])
+print(type(cookie_number[0]))
+
+
 
 # driver.quit()
 
