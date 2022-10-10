@@ -1,8 +1,6 @@
 from selenium import webdriver
-from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.service import Service
 
 LINK = "https://orteil.dashnet.org/cookieclicker/"
@@ -20,7 +18,7 @@ driver.implicitly_wait(50)
 driver.find_element(By.XPATH, '/html/body/div[1]/div/a[1]').click()
 
 game_on = True
-while game_on:
+for n in range(20):
     driver.find_element(By.ID, "bigCookie").click()
 
 cookie_number = driver.find_element(By.ID, 'cookies').text.split(" ")[0]
