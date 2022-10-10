@@ -1,3 +1,4 @@
+import time
 from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.by import By
@@ -17,12 +18,29 @@ driver.find_element(By.ID, "langSelect-EN").click()
 driver.implicitly_wait(50)
 driver.find_element(By.XPATH, '/html/body/div[1]/div/a[1]').click()
 
+item0 = driver.find_element(By.XPATH, '//*[@id="product0"]')
+item1 = driver.find_element(By.XPATH, '//*[@id="product1"]')
+item2 = driver.find_element(By.XPATH, '//*[@id="product2"]')
+item3 = driver.find_element(By.XPATH, '//*[@id="product3"]')
+
 game_on = True
-for n in range(20):
+while game_on:
+    if item0:
+        if item1:
+            if item2:
+                if item3:
+                    item3.click()
+                else:
+                    item2.click()
+            else:
+                item1.click()
+        else:
+            item0.click()
     driver.find_element(By.ID, "bigCookie").click()
 
+
 cookie_number = driver.find_element(By.ID, 'cookies').text.split(" ")[0]
-print(int(cookie_number))
-print(type(cookie_number))
+# print(int(cookie_number))
+# print(type(cookie_number))
 
 # driver.quit()
