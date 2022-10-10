@@ -13,21 +13,17 @@ s = Service(chrome_drive_path)
 driver = webdriver.Chrome(service=s)
 driver.get(LINK)
 
-
 actions = ActionChains(driver)
 driver.implicitly_wait(10)
-language = driver.find_element(By.ID, "langSelect-EN").click()
+driver.find_element(By.ID, "langSelect-EN").click()
 driver.implicitly_wait(50)
-terms = driver.find_element(By.XPATH, '/html/body/div[1]/div/a[1]').click()
-
+driver.find_element(By.XPATH, '/html/body/div[1]/div/a[1]').click()
 
 for n in range(11):
-    cookie = driver.find_element(By.ID, "bigCookie").click()
+    driver.find_element(By.ID, "bigCookie").click()
 
 cookie_number = driver.find_element(By.ID, 'cookies').text.split(" ")[0]
 print(int(cookie_number))
 print(type(cookie_number))
-
-
 
 # driver.quit()
