@@ -59,4 +59,17 @@ def time_machine_price():
     return int(tmp)
 
 
+cp = cursor_price()
+gp = grandma_price()
+fp = factory_price()
+mp = mine_price()
+sp = shipment_price()
+ap = alchemy_price()
+pp = portal_price()
+tmp = time_machine_price()
+
+print(cp)
+# print(ap)
+# print(tmp)
+
 driver.quit()
