@@ -9,6 +9,7 @@ s = Service(chrome_drive_path)
 driver = webdriver.Chrome(service=s)
 driver.get(LINK)
 
+
 # driver.implicitly_wait(50)
 # Cursor price
 def cursor_price():
